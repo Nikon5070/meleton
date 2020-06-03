@@ -17,6 +17,10 @@ export const mutations = {
     state.list = payload;
   },
 
+  ADD_ITEM(state, payload) {
+    state.list = [...state.list, payload];
+  },
+
   CHANGE_ITEM(state, payload) {
     state.list = state.list
       .map(((item) => ((+item.id === +payload.id) ? { ...payload } : item)));

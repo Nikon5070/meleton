@@ -57,11 +57,15 @@ export default {
       type: [Number, String],
       default: '',
     },
+    isEditMode: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
     return {
-      isEdit: false,
+      isEdit: this.isEditMode,
     };
   },
 
@@ -113,6 +117,10 @@ export default {
     },
 
     handleDelete() {
+      if (this.isEditMode) {
+        this.$emit('delete');
+      }
+
       if (this.isEdit) {
         this.isEdit = false;
       } else {

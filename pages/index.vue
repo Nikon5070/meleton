@@ -1,12 +1,8 @@
 <template>
   <div class="index-page">
     <div class="container">
-      <h1 class="title">
-        Список
-      </h1>
-      <CartSort
-        :list="sort"
-        :active="activeSort"
+      <CartTop
+        :sort="sort"
       />
       <Cart
         v-if="list && list.length"
@@ -23,20 +19,14 @@ import { mapState, mapGetters } from 'vuex';
 import CART_SORT from '@/json/cartSort.json';
 
 const Cart = () => import('@/components/cart/Cart');
-const CartSort = () => import('@/components/cart/CartSort');
+const CartTop = () => import('@/components/cart/CartTop');
 
 export default {
   name: 'MainPage',
 
   components: {
-    CartSort,
+    CartTop,
     Cart,
-  },
-
-  data() {
-    return {
-      sort: CART_SORT,
-    };
   },
 
   computed: {
@@ -46,6 +36,13 @@ export default {
     ...mapGetters({
       list: 'cart/getList',
     }),
+
+    sort() {
+      return {
+        list: CART_SORT,
+        active: this.activeSort,
+      };
+    },
   },
 };
 </script>
