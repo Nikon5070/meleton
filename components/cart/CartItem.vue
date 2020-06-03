@@ -19,15 +19,18 @@
       <div
         v-if="!isEdit"
         class="edit"
+        title="Редактирование"
         @click="handleEdit"
       />
       <div
         v-else
         class="accept"
+        title="Применить"
         @click="handleAccept"
       />
       <div
         class="delete"
+        :title="!isEdit ? 'Удалить' : 'Отменить'"
         @click="handleDelete"
       />
     </div>
