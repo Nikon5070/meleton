@@ -1,0 +1,19 @@
+@mixin a-reset() {
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin ul-reset() {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin button-reset() {
+  background: none;
+  border: 0;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+}
+

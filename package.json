@@ -1,0 +1,52 @@
+{
+  "name": "Cart",
+  "version": "1.0.0",
+  "description": "Test project",
+  "author": "Nikita Kuprin",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "build:analyze": "nuxt build --analyze",
+    "start": "nuxt start",
+    "heroku-postbuild": "npm run build",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint",
+    "test": "jest --verbose"
+  },
+  "dependencies": {
+    "@nuxtjs/component-cache": "^1.1.4",
+    "@nuxtjs/pwa": "^3.0.0-beta.20",
+    "@nuxtjs/svg-sprite": "^0.4.10",
+    "element-ui": "^2.13.1",
+    "lodash": "^4.17.15",
+    "nuxt": "^2.12.2",
+    "nuxt-webfontloader": "^1.1.0",
+    "svg4everybody": "^2.1.9",
+    "v-click-outside": "^3.0.1"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^2.0.2",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "@vue/test-utils": "^1.0.0-beta.33",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^25.4.0",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-standard": ">=14.1.1",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-import-resolver-webpack": "^0.12.1",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": ">=2.20.2",
+    "eslint-plugin-jest": ">=23.8.2",
+    "eslint-plugin-node": ">=11.1.0",
+    "eslint-plugin-promise": ">=4.0.1",
+    "eslint-plugin-standard": ">=4.0.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "jest": "^25.4.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2"
+  }
+}

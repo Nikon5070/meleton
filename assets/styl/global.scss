@@ -1,0 +1,48 @@
+html {
+  font-size: 14px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body,
+#__nuxt,
+#__layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#__layout {
+  flex-direction: column;
+  min-height: 100vh;
+  background: #fff;
+}
+
+body {
+  font-family: 'Ubuntu', monospace;
+  font-weight: 400;
+  color: $black;
+}
+
+input, textarea, select, button {
+  font: inherit;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 35px;
+}
