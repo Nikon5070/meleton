@@ -81,7 +81,10 @@ export default {
     },
 
     handleAccept() {
-      this.$emit('change', this.$refs.main.getForm());
+      this.$emit('change', {
+        id: this.id,
+        ...this.$refs.main.getForm(),
+      });
 
       this.isEdit = false;
     },
