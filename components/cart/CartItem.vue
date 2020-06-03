@@ -4,13 +4,17 @@
     class="cart-item"
     :class="classBind"
   >
-    <div class="wrapper">
+    <component
+      :is="bindWrapper.is"
+      v-bind="bindWrapper"
+      class="wrapper"
+    >
       <component
         :is="isComponent"
         ref="main"
         v-bind="$props"
       />
-    </div>
+    </component>
     <div class="actions">
       <div
         v-if="!isEdit"
@@ -69,6 +73,22 @@ export default {
         'is-edit': this.isEdit,
       };
     },
+
+    bindWrapper() {
+      const defaultComponent = {
+        is: 'div',
+      };
+
+      if (!this.isEdit) {
+        return {
+          ...defaultComponent,
+          is: 'nuxt-link',
+          to: `/${this.id}`,
+        };
+      }
+
+      return defaultComponent;
+    },
   },
 
   methods: {
@@ -112,6 +132,10 @@ export default {
       opacity: 1;
       visibility: visible;
     }
+  }
+
+  .wrapper {
+    @include a-reset();
   }
 
   .actions {

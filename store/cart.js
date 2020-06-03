@@ -52,4 +52,10 @@ export const getters = {
 
     return [...list].sort(methodSort);
   },
+
+  getItemById: (state) => (id) => {
+    const { list } = state;
+
+    return list.find(({ id: itemId }) => +itemId === +id) || {};
+  },
 };
