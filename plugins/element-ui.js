@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import Vue from 'vue';
-import Dialog from 'element-ui/lib/dialog';
+import Pagination from 'element-ui/lib/pagination';
 
-Vue.use(Dialog);
+Vue.use(Pagination);

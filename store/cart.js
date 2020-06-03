@@ -8,6 +8,8 @@ export const state = () => ({
   sort: {
     ...CART_SORT[0],
   },
+  page: 1,
+  limit: 2,
 });
 
 export const mutations = {
@@ -27,6 +29,14 @@ export const mutations = {
   CHANGE_SORT(state, payload) {
     state.sort = payload;
   },
+
+  SET_PAGE(state, payload) {
+    state.page = +payload || 1;
+  },
+
+  RESET_PAGE(state) {
+    state.sort = 1;
+  },
 };
 
 
@@ -36,7 +46,10 @@ export const actions = {
 
 export const getters = {
   getList: (state) => {
-    const { sort, list } = state;
+    const {
+      list,
+      sort,
+    } = state;
     const map = {
       price: {
         ASC: (a, b) => a.price - b.price,
@@ -50,7 +63,14 @@ export const getters = {
 
     const methodSort = (map[sort.code] && map[sort.code][sort.value]) || (() => {});
 
-    return [...list].sort(methodSort);
+    return [...list]
+      .sort(methodSort);
+  },
+
+  getListByPage: () => ({ list, page, limit }) => {
+    const sliceData = [(page - 1) * limit, page * limit];
+
+    return [...list].slice(...sliceData);
   },
 
   getItemById: (state) => (id) => {
