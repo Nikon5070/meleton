@@ -20,7 +20,7 @@
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "@nuxtjs/svg-sprite": "^0.4.10",
     "element-ui": "^2.13.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "nuxt": "^2.12.2",
     "nuxt-webfontloader": "^1.1.0",
     "svg4everybody": "^2.1.9",
